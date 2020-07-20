@@ -1,0 +1,533 @@
+/* The Best CRM Ever */
+
+:root {
+    --accent: #e48297;
+}
+
+@media (prefers-color-scheme: light) {
+    .th1 {
+        --bg: #fff;
+        --shadow: #333;
+        --blocks: #fff;
+        --el: #000;
+    }
+    .th2 {
+        --bg: #111;
+        --shadow: #000;
+        --blocks: #222;
+        --el: #fff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .th1 {
+        --bg: #111;
+        --shadow: #000;
+        --blocks: #222;
+        --el: #fff;
+    }
+    .th2 {
+        --bg: #fff;
+        --shadow: #333;
+        --blocks: #fff;
+        --el: #000;
+    }
+}
+
+::selection {
+    color: var(--el);
+    background: var(--accent);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--el);
+    /* Pattern: */
+    /*background-image: url('../img/flamingo.svg');*/
+    /*background-attachment: fixed;*/
+}
+
+header {
+    position: fixed;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    outline: none;
+    padding: 10px;
+}
+
+button,
+input {
+    border: none;
+    color: var(--el)
+}
+
+nav button {
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+    border-radius: 50%;
+}
+
+nav button:first-child, nav button:last-child {
+    margin-top: 0;
+}
+
+nav button:last-child {
+    display: none;
+}
+
+button,
+section,
+input[type="text"] {
+    box-shadow: 0 0 30px var(--shadow);
+    background: var(--blocks);
+    transition: 1s;
+}
+
+button:hover,
+section:hover,
+input[type="text"]:hover,
+input[type="text"]:focus,
+button:focus {
+    box-shadow: 0 0 50px var(--accent);
+}
+
+button:focus {
+    border: solid var(--accent);
+}
+
+svg {
+    fill: var(--el);
+    width: 100%;
+    height: 100%;
+}
+
+.h {
+    display: none;
+}
+
+button:hover>.r,
+div:hover>.r {
+    display: none;
+}
+
+button:hover>.h,
+div:hover>.h {
+    display: block;
+}
+
+.info {
+    height: 100%;
+}
+
+@media screen and (max-height: 550px) {
+    .info {
+        display: none;
+    }
+}
+
+.info p {
+    position: absolute;
+    bottom: 20%;
+    transform: translateY(-50%);
+    transform: rotate(-90deg);
+}
+
+section {
+    margin: 50px auto;
+    padding: 50px;
+    height: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 4vw;
+}
+
+@media screen and (min-width: 800px) {
+    section {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    section {
+        width: 75%;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        width: 90%;
+    }
+}
+
+.filters div,
+input[type="reset"],
+input[type="text"],
+button,
+.show_all {
+    border-radius: 25px;
+}
+
+.search {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background: none;
+    box-shadow: none;
+}
+
+.search:hover {
+    box-shadow: none;
+}
+
+input[type="text"] {
+    margin-right: 50px;
+    padding: 0 30px;
+    width: calc(100% - 250px);
+    height: 100%;
+    outline: none;
+    transition: 1s;
+}
+
+input[type="text"]:focus {
+    border: solid var(--accent);
+}
+
+.search button {
+    width: 200px;
+    height: 100%;
+    min-width: 50px;
+    transition: 1s;
+}
+
+@media screen and (max-width: 720px) {
+    .search button {
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .search button {
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .search input {
+        width: calc(100% - 100px);
+    }
+    .search button {
+        width: 50px;
+        padding-top: 14px;
+    }
+}
+
+form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.filters div,
+.show_all {
+    line-height: 50px;
+}
+
+.filters div,
+input[type="reset"],
+.show_all {
+    margin: 25px;
+    width: 200px;
+    height: 50px;
+    border: dashed;
+    text-align: center;
+    background: none;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.date li {
+    text-align: center
+}
+
+input[type="reset"] {
+    width: 100px;
+    border-color: inherit;
+    color: inherit;
+}
+
+input[type="date"] {
+    display: none;
+    border-radius: 10px;
+    border: 1px dashed var(--accent);
+    background-color: var(--blocks);
+}
+
+.date lable,
+br {
+    display: none;
+}
+
+.date p {
+    margin: 0;
+}
+
+.filters div:hover {
+    height: 180px;
+}
+
+.date:hover>input[type="date"],
+input[type="date"]:focus,
+input[type="date"]:focus~input[type="date"] {
+    display: inline-block;
+}
+
+input[type="date"]:focus~lable,
+input[type="date"]:focus~br,
+.date:hover>lable,
+.date:hover>br {
+    display: inline;
+}
+
+div:hover,
+input[type="reset"]:hover,
+.card ul:hover {
+    border-color: var(--accent);
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.filters ul {
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.filters div:hover ul {
+    opacity: 100;
+    display: block;
+}
+
+li {
+    text-align: left;
+}
+
+lable {
+    font-weight: normal;
+}
+
+.show_all {
+    border: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 200px;
+    text-align: left;
+}
+
+thead {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+tr,
+th {
+    padding-right: 50px;
+}
+
+th {
+    padding-top: 10px;
+    top: 0;
+    position: sticky;
+    padding-bottom: 10px;
+    background: var(--blocks);
+    box-shadow: 0 -3px 10px 7px var(--blocks);
+    transition: 1s;
+}
+
+tbody tr {
+    border-bottom: 1px dashed #888;
+}
+
+tbody tr:last-child {
+    border: none;
+}
+
+td {
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+tr:hover {
+    border-color: var(--accent);
+}
+
+@media screen and (min-width: 1150px) {
+    tr:hover>.r {
+        display: none;
+    }
+    tr:hover>.h {
+        display: block;
+    }
+}
+
+th:last-child {
+    padding-right: 0;
+}
+
+@media screen and (max-width: 1150px) {
+    .result th:nth-last-child(2),
+    .result th:last-child,
+    .result td:nth-last-child(3),
+    .result td:nth-last-child(2),
+    .result td:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) and (min-width: 800px){
+    .result th:nth-last-child(3),
+    .result td:nth-last-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .result th:nth-last-child(4),
+    .result td:nth-last-child(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .result th:nth-last-child(3),
+    .result td:nth-last-child(4) {
+        display: none;
+    }
+}
+
+.card {
+    display: none;
+    text-align: center;
+    position: sticky;
+    bottom: 50px;
+    margin: 0 auto;
+    width: 40%;
+    height: auto;
+    z-index: 2;
+    box-shadow: 0 0 50px var(--shadow), 0 0 100vh 100vh rgba(0,0,0, .5);
+}
+
+@media screen and (max-width: 1350px) {
+    .card {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .card {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .card {
+        width: 80%;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0 50px var(--accent), 0 0 100vh 100vh rgba(0,0,0, .6);
+}
+
+.main {
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+}
+
+.fields {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /*grid-auto-rows: 150px;*/
+    /*justify-content: space-between;*/
+    /*flex-wrap: wrap;*/
+
+}
+
+.fields div {
+    margin: 10px;
+    text-align: left;
+}
+
+.tall {
+    grid-row: span 2 / auto;
+}
+
+.wide {
+    grid-column: span 2 / auto;
+}
+
+.fields ul {
+    padding: 0;
+    list-style-type: sq;
+    min-width: 100px;
+    border-radius: 15px;
+    font-weight: normal;
+    transition: 0.5s;
+}
+
+.fields div:first-child ul {
+    color: var(--accent);
+}
+
+.history {
+    border: dashed;
+    border-radius: 50px;
+    padding: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    .history th:nth-child(2),
+    .history td:nth-child(2) {
+        display: none;
+    }
+}
+
+.history :hover td:nth-child(2),
+.history :hover th:nth-child(2) {
+    display: inline-block;
+}
