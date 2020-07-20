@@ -7,13 +7,13 @@
 @media (prefers-color-scheme: light) {
     .th1 {
         --bg: #ddd;
-        --arrow: #000;
+        --arrow: #333;
         --shadow: rgba(0, 0, 0, 0.1);
         --light: rgba(255, 255, 255, 0.3);
     }
     .th2 {
         --bg: #333;
-        --arrow: #fff;
+        --arrow: #ddd;
         --shadow: rgba(0, 0, 0, 0.3);
         --light: rgba(255, 255, 255, 0.1);
     }
@@ -22,13 +22,13 @@
 @media (prefers-color-scheme: dark) {
     .th1 {
         --bg: #333;
-        --arrow: #fff;
+        --arrow: #ddd;
         --shadow: rgba(0, 0, 0, 0.3);
         --light: rgba(255, 255, 255, 0.1);
     }
     .th2 {
         --bg: #ddd;
-        --arrow: #000;
+        --arrow: #333;
         --shadow: rgba(0, 0, 0, 0.1);
         --light: rgba(255, 255, 255, 0.3);
     }
